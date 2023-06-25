@@ -59,42 +59,42 @@ class _AppState extends State<App> {
           locale: const Locale('en', ''),
           onGenerateRoute: GeneratePage.onGenerate,
           supportedLocales: const [Locale('en', '')],
-          // theme: ThemeData(
-          //   // iconTheme: const IconThemeData(color: Color(0xFF97D5C8)),
-          //   appBarTheme: const AppBarTheme(
-          //     iconTheme: IconThemeData(color: Color(0xFFFFFFFF)),
-          //     backgroundColor: Color(0xFFFE5A01),
-          //   ),
-          //   textTheme: const TextTheme(
-          //     headline1: TextStyle(
-          //       color: Color(0xFF4A4B4D),
-          //     ),
-          //     headline2: TextStyle(
-          //       color: Color(0xFF7C7D7E),
-          //     ),
-          //     bodyText1: TextStyle(
-          //       color: Color(0xFF171717),
-          //     ),
-          //     bodyText2: TextStyle(
-          //       color: Color(0xFF231D25),
-          //     ),
-          //     subtitle1: TextStyle(
-          //       color: Color(0xFFBABABA),
-          //     ),
-          //     subtitle2: TextStyle(
-          //       color: Color(0xFF999594),
-          //     ),
-          //   ),
-          //   colorScheme: ColorScheme.fromSwatch().copyWith(
-          //     brightness: Brightness.light,
-          //     shadow: const Color(0xFF000000),
-          //     primary: const Color(0xFFFE5A01),
-          //     background: const Color(0xFFFBFAFC),
-          //     secondary: const Color(0xFFFB7552),
-          //     tertiary: const Color(0xFF40484E),
-          //   ),
-          //   fontFamily: "Metropolis",
-          // ),
+          theme: ThemeData(
+            // iconTheme: const IconThemeData(color: Color(0xFF97D5C8)),
+            // appBarTheme: const AppBarTheme(
+            //   iconTheme: IconThemeData(color: Color(0xFFFFFFFF)),
+            //   backgroundColor: Color(0xFFFE5A01),
+            // ),
+            // textTheme: const TextTheme(
+            //   headline1: TextStyle(
+            //     color: Color(0xFF4A4B4D),
+            //   ),
+            //   headline2: TextStyle(
+            //     color: Color(0xFF7C7D7E),
+            //   ),
+            //   bodyText1: TextStyle(
+            //     color: Color(0xFF171717),
+            //   ),
+            //   bodyText2: TextStyle(
+            //     color: Color(0xFF231D25),
+            //   ),
+            //   subtitle1: TextStyle(
+            //     color: Color(0xFFBABABA),
+            //   ),
+            //   subtitle2: TextStyle(
+            //     color: Color(0xFF999594),
+            //   ),
+            // ),
+            colorScheme: ColorScheme.fromSwatch().copyWith(
+              brightness: Brightness.light,
+              shadow: const Color(0xFF000000),
+              primary: const Color(0xFF63b2f2),
+              background: const Color(0xFFFBFAFC),
+              secondary: const Color(0xFF0d47a1),
+              tertiary: const Color(0xFF40484E),
+            ),
+            fontFamily: "Metropolis",
+          ),
         );
       },
     );

@@ -18,11 +18,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     Future.delayed(_pushAfterDuration).whenComplete(
-      () => WidgetsBinding.instance.addPostFrameCallback(
-        (_) {
-          Navigator.of(context).pushReplacementNamed(PageName.homePage);
-        },
-      ),
+      () => Navigator.of(context).pushReplacementNamed(PageName.homePage),
     );
     super.initState();
   }
