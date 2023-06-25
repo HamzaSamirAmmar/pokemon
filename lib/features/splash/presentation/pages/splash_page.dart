@@ -25,8 +25,13 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: FlutterLogo(),
+    return Scaffold(
+      body: Center(
+        child: SvgPicture.asset(
+          IconsAssets.flutterLogo,
+          height: 250.h,
+        ),
+      ),
     );
   }
 }
