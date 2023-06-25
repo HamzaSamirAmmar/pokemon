@@ -6,9 +6,9 @@ import 'package:fluttertoast/fluttertoast.dart';
 import '../usecases/usecase.dart';
 
 class Endpoints {
-  static const String baseUrl = "http://192.168.43.231:8000/api";
+  static const String baseUrl = "https://pokeapi.co/api/v2";
 
-  static const String login = "/auth/login";
+  static const String pokemons = "/pokemon";
 }
 
 class LocalStorageKeys {
@@ -32,18 +32,7 @@ class QueryParams {
   }
 }
 
-class RequestBody {
-  /// ** Login ** ///
-  static FormData login({
-    required String number,
-    required String password,
-  }) {
-    return FormData.fromMap({
-      "phone": number,
-      "password": password,
-    });
-  }
-}
+class RequestBody {}
 
 class GetOptions {
   static Options options = Options();

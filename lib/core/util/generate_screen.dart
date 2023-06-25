@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pokemon/features/animations/presentation/pages/animations_page.dart';
 import 'package:pokemon/features/home/presentation/pages/home_page.dart';
+import 'package:pokemon/features/pokemons/presentation/pages/pokemons_page.dart';
 
 import '../../features/splash/presentation/pages/splash_page.dart';
 
@@ -34,6 +35,14 @@ class GeneratePage {
             builder: (context) => AnimationsPage(
               text: value.arguments as String,
             ),
+          );
+        }
+
+      /*** pokemonsPage **/
+      case PageName.pokemonsPage:
+        {
+          return MaterialPageRoute(
+            builder: (context) => const PokemonsPage(),
           );
         }
 
@@ -106,4 +115,5 @@ class PageName {
   static const String splashPage = "/";
   static const String homePage = "/home";
   static const String animationsPage = "/animations";
+  static const String pokemonsPage = "/pokemons";
 }

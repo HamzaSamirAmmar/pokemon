@@ -3,25 +3,24 @@ library base_list_response_model;
 import 'package:flutter/cupertino.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import '../../../features/pokemons/data/models/pokemon_model.dart';
 import '../../error/exceptions.dart';
 
 part 'base_list_response_model.g.dart';
 
 @JsonSerializable()
 class BaseListResponseModel<T> {
-  @JsonKey(name: 'status')
-  final String? status;
+  final int? count;
 
-  @JsonKey(name: 'message')
-  final dynamic message;
+  final String? next;
 
-  @JsonKey(name: 'data')
+  @JsonKey(name: 'results')
   @_Converter()
   final List<T>? data;
 
   BaseListResponseModel({
-    this.status,
-    this.message,
+    this.count,
+    this.next,
     this.data,
   });
 
@@ -37,11 +36,10 @@ class _Converter<T> implements JsonConverter<T, Object> {
     debugPrint('t is ${T.toString()}');
 
     if (json is Map<String, dynamic>) {
-      // /*** ContactInformationModel ***/
-      // if (T.toString() == ContactInformationModel.className) {
-      //   return ContactInformationModel.fromJson(json) as T;
-      // }
-
+      /*** PokemonModel ***/
+      if (T.toString() == PokemonModel.className) {
+        return PokemonModel.fromJson(json) as T;
+      }
     }
 
     debugPrint('_dataFromJson: parse error (BaseListResponseModel)');

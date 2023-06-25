@@ -26,8 +26,8 @@ class CustomTextButton extends StatelessWidget {
     return SizedBox(
       height: height ?? 57.h,
       width: width ?? 307.w,
-      child: TextButton(
-        style: TextButton.styleFrom(
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor ??
               (filled
                   ? Theme.of(context).colorScheme.primary

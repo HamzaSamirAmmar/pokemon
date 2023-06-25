@@ -271,7 +271,7 @@ class BaseRemoteDataSourceImpl extends BaseRemoteDataSource {
       debugPrint("Switching result\n");
 
       /// 2.1: result is true
-      if (result.status == 'success') {
+      if (result.data != null) {
         debugPrint("Result is true\n");
         return result.data!;
       }
@@ -280,7 +280,7 @@ class BaseRemoteDataSourceImpl extends BaseRemoteDataSource {
       else {
         debugPrint("Result is false\n");
         throw ServerException(
-          error: result.message ?? ErrorMessage.somethingWentWrong,
+          error: ErrorMessage.somethingWentWrong,
         );
       }
     }
