@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pokemon/core/util/generate_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -94,7 +95,12 @@ class _HomePageState extends State<HomePage> {
                     width: double.infinity,
                     height: 50.h,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(
+                          PageName.animationsPage,
+                          arguments: _nameController.text,
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                           backgroundColor:
                               Theme.of(context).colorScheme.secondary,
