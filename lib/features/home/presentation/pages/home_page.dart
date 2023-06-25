@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pokemon/core/util/generate_screen.dart';
+
+import '../../../../core/util/generate_screen.dart';
+import '../../../../core/widgets/buttons/custom_elevated_button.dart';
+import '../widgets/clear_text_button.dart';
+import '../widgets/custom_text_form_field.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -45,18 +49,7 @@ class _HomePageState extends State<HomePage> {
               Column(
                 children: [
                   SizedBox(height: 30.h),
-                  TextFormField(
-                    controller: _nameController,
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(vertical: 4.h),
-                      isDense: true,
-                      hintText: "Enter your name",
-                      hintStyle: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 18.sp,
-                      ),
-                    ),
-                  ),
+                  CustomTextFormField(controller: _nameController),
                   SizedBox(height: 50.h),
                   Text(
                     _nameController.text,
@@ -68,66 +61,24 @@ class _HomePageState extends State<HomePage> {
               ),
               Column(
                 children: [
-                  TextButton(
-                    onPressed: _clearText,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const Icon(
-                          Icons.delete,
-                          color: Colors.red,
-                        ),
-                        SizedBox(width: 10.w),
-                        Text(
-                          "Clear text",
-                          style: TextStyle(
-                            color: Colors.red,
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ],
-                    ),
+                  ClearTextButton(onPressed: _clearText),
+                  SizedBox(height: 20.h),
+                  CustomElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(
+                        PageName.animationsPage,
+                        arguments: _nameController.text,
+                      );
+                    },
+                    title: "Go to page 1",
                   ),
                   SizedBox(height: 20.h),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 50.h,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pushNamed(
-                          PageName.animationsPage,
-                          arguments: _nameController.text,
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              Theme.of(context).colorScheme.secondary,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12))),
-                      child: Text(
-                        "Go to page 1",
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20.h),
-                  SizedBox(
-                    height: 50.h,
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pushNamed(
-                          PageName.pokemonsPage,
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      ),
-                      child: Text("Go to page 2"),
-                    ),
+                  CustomElevatedButton(
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(PageName.pokemonsPage);
+                    },
+                    title: "Go to page 2",
                   ),
                   SizedBox(height: 40.h),
                 ],
